@@ -68,3 +68,8 @@ const PORT = 9000;
 app.listen(PORT, () => {
   console.log(` Server running at http://localhost:${PORT}`);
 });
+
+function handleError(err, req, res, next) {
+  console.error("Error occurred:", err);
+  res.status(500).send("Internal Server Error");
+}
